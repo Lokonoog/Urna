@@ -41,7 +41,7 @@ public class TelaEleitor extends javax.swing.JFrame {
         jLnome = new javax.swing.JLabel();
         jBvotar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Título de Eleitor ou RG:");
@@ -122,10 +122,12 @@ public class TelaEleitor extends javax.swing.JFrame {
                 jBvotar.setEnabled(false);
                 jLnome.setText("Usuario não cadastrado/Usuario ja votou");
             }
+           dispose();
         }
     }else{
         TelaParcial parcial =  new TelaParcial();
         parcial.setVisible(true);
+        dispose();
         
         jLchaves.setText(String.valueOf(Global.chaves));
         jLkiko.setText(String.valueOf(Global.kiko));
@@ -154,6 +156,7 @@ public class TelaEleitor extends javax.swing.JFrame {
             Global.javoto[2] = "1";
             break;
         } 
+        dispose();
     }//GEN-LAST:event_jBvotarActionPerformed
 
     public static void main(String args[]) {
